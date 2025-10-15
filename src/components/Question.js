@@ -1,16 +1,11 @@
 import Options from "./Options";
 
-export default function Question({ question }) {
-  debugger;
+export default function Question({ question, dispatch, answer }) {
   console.log(question);
   return (
     <div>
       <h4>{question.question}</h4>
-      <div className="options">
-        {question.options.map((option) => (
-          <Options option={option} />
-        ))}
-      </div>
+      <Options question={question} answer={answer} dispatch={dispatch} />
     </div>
   );
 }
